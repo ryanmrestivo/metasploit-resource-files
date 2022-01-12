@@ -17,7 +17,7 @@ The resource scripts this repository contains serves as proof of concept (**POC*
 
 ## Mosquito - Automating reconnaissance and brute force attacks
 
-! [mosquito_banner](http://u.cubeupload.com/pedroubuntu10/mosquitobanner.png)
+! metasploit-resource-files-image
 
 <br/>
 
@@ -39,7 +39,7 @@ The resource scripts this repository contains serves as proof of concept (**POC*
 ### Project History
 Mosquito.sh (**BASH**) script was written for the purpose of automating the resource files (**ERB**) contained in this [repository](https://github.com/r00t-3xp10it/resource_files). Each resource file is written to allow users to run them in three different ways, from scan the Local Lan, scan user inputs (**RHOSTS/LHOSTS**) or randomly scan the **WAN** network for possible targets to add to Metasploit database.
 
-! [mosquito_banner] (https://i.imgur.com/Ibrvsjk.png)
+! metasploit-resource-files-image
 
 **WARNING:** In 'Random search WAN for rhosts' its advice to use default **LIMMIT** values (approximately 4 to 5 minutes scan)
 
@@ -49,9 +49,9 @@ Mosquito.sh (**BASH**) script was written for the purpose of automating the reso
 ### Framework Description
 Mosquito as first step uses Nmap to search-recon hosts information (or possible targets), then adds all the hosts found (with open ports) to Metasploit database to be used in further recon, exploration or brute force jobs carried out later with msf.
 
-! [mosquito_banner] (http://u.cubeupload.com/pedroubuntu10/mosquitorecon2.png)
-! [mosquito_banner] (https://i.imgur.com/nbbhj5N.png)
-! [mosquito_banner] (http://u.cubeupload.com/pedroubuntu10/mosquitorecon3.png)
+! metasploit-resource-files-image
+! metasploit-resource-files-image
+! metasploit-resource-files-image
 
 Mosquito allow us to scan Local Lan or WAN networks using Nmap (search-recon) and Metasploit (recon-exploration-brute-force), but unlike msf the scans performed by Nmap will use a fake UserAgent (IPhone/Safari) stealth scans (SYN ack) and Cloak scan(s) with decoys (-D decoy_ip,decoy_ip,ME) that makes forensic IDS analysis more difficult to identify the attack.
 
@@ -67,14 +67,13 @@ Mosquito allow us to scan Local Lan or WAN networks using Nmap (search-recon) an
 
 Mosquito also allow us to search-scan-exploit-brute-force multiple targets at the same time (multi-tasking).
 
-![mosquito_multi_targets](https://i.imgur.com/r3BXpZa.png)
-![mosquito_multi_targets](https://i.imgur.com/3noMbfS.png)
+! metasploit-resource-files-image
+! metasploit-resource-files-image
 
 And each valid credentials found (brute-force) will spawn a shell session to remote host.
 
-![mosquito_banner](http://u.cubeupload.com/pedroubuntu10/telnetbrutecreds.png)
-![mosquito_banner](https://i.imgur.com/630IHhF.png)
-
+! metasploit-resource-files-image
+! metasploit-resource-files-image
 
 [jump to top](https://github.com/r00t-3xp10it/resource_files#index)
 
@@ -87,7 +86,7 @@ Initially all resource scripts that this project contains are written to allow i
 nevertheless, mosquito users can still improve the existing dictionary(s) by edit them before executing the framework. <br/>
 All dictionary files can be found in project working directory under: 'resource_files/bin/worldlists'.
 
-! [mosquito_banner] (http://u.cubeupload.com/pedroubuntu10/dic.png)
+! metasploit-resource-files-image
 
 [jump to top] (https://github.com/r00t-3xp10it/resource_files#index)
 
@@ -142,10 +141,10 @@ or Nmap nse additional scripts installed, the -i switch in mosquito allow us to 
 ### Framework help-update-install-execution
 
     [help] sudo ./mosquito.sh -h
-! [mosquito_banner] (https://i.imgur.com/TjoLWrh.png)
+! metasploit-resource-files-image
 
     [update] sudo ./mosquito.sh -u
-! [mosquito_banner] (http://u.cubeupload.com/pedroubuntu10/mosquitoupdate.png)
+! metasploit-resource-files-image
 
 
 [jump to top] (https://github.com/r00t-3xp10it/resource_files#index)
