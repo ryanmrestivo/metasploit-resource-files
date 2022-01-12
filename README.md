@@ -2,7 +2,6 @@
 
 <blockquote>Resource scripts provides an easy way for us to automate repetitive tasks in Metasploit. Conceptually they're just like batch scripts, they contain a set of commands that are automatically and sequentially executed when you load the script in Metasploit. You can create a resource script by chaining together a series of Metasploit console commands or by directly embedding Ruby to do things like call APIs, interact with objects in the database, modules and iterate actions. This repository is designed to demonstrate what resource files [ERB](https://www.offensive-security.com/metasploit-unleashed/custom-scripting/) can accomplish when automating tasks in msfconsole, and they are written to take advantage of multi-hosts-exploitation-scan tasks (manage large databases of hosts) from scanning the LAN for alive hosts, scan attackers input rhosts or scan wan networks in search of rhosts to exploit.</blockquote>
 
-**This repository contains various resource files to assist in exploitation or Metasploit database related issues.**<br/>
 ! metasploit-resource-files-image
 
 <br/>
@@ -33,7 +32,7 @@ Mosquito.sh (**BASH**) script was written for the purpose of automating the reso
 
 ! metasploit-resource-files-image
 
-**WARNING:** In 'Random search WAN for rhosts' its advice to use default **LIMMIT** values (approximately 4 to 5 minutes scan)
+**WARNING:** In 'Random search WAN for rhosts' its advice to use default **LIMIT** values (approximately 4 to 5 minutes scan)
 
 ---
 <br/>
@@ -49,20 +48,20 @@ Mosquito allow us to scan Local Lan or WAN networks using Nmap (search-recon) an
 
 ! metasploit-resource-files-image
 
-**WARNING:** This stealth technics will not prevent detection.
+**WARNING:** Stealth techniques will not prevent detection.
 
-    stealth technics used to evade IDS analysis
+    stealth techniques used to evade IDS analysis
     -------------------------------------------
     nmap -sS [stealth scan using SYN ack]
     nmap -D 188.234.11.254,167.113.24.80,ME [Cloak a scan with decoys]
     nmap --script-args http.useragent="Apache-HttpClient/4.0.3 (java 1.5)" [spoof your UserAgent]
 
-Mosquito also allow us to search-scan-exploit-brute-force multiple targets at the same time (multi-tasking).
+Mosquito also allows search-scan-exploit-brute-force multiple targets at the same time (multi-tasking).
 
 ! metasploit-resource-files-image
 ! metasploit-resource-files-image
 
-And each valid credentials found (brute-force) will spawn a shell session to remote host.
+Each valid credentials found (brute-force) will spawn a shell session to remote host.
 
 ! metasploit-resource-files-image
 ! metasploit-resource-files-image
@@ -75,8 +74,8 @@ And each valid credentials found (brute-force) will spawn a shell session to rem
 ### Framework Dictionary files
 Initially all resource scripts that this project contains are written to allow is users to input dictionary file absolute path before the scan take place (own dictionary), but mosquito ships with its own set of dictionary files to assist in brute force tasks, and it does not allow is users to input another dictionary file when running mosquito framework.
 
-nevertheless, mosquito users can still improve the existing dictionary(s) by edit them before executing the framework. <br/>
-All dictionary files can be found in project working directory under: 'resource_files/bin/worldlists'.
+Mosquito users can still improve the existing dictionary(s) by edit them before executing the framework. <br/>
+All dictionary files can be found in project working directory under: 'meatsploit-resource-files/bin/worldlists'.
 
 ! metasploit-resource-files-image
 
