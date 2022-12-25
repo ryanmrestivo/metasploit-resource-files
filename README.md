@@ -22,22 +22,22 @@ The resource scripts this repository contains serves as proof of concept (**POC*
 <br />
 
 ### Index
-[1] [Project History](https://github.com/r00t-3xp10it/resource_files#project-history)<br />
-[2] [Framework Description](https://github.com/r00t-3xp10it/resource_files#framework-description)<br />
-[3] [Framework Dictionary files](https://github.com/r00t-3xp10it/resource_files#framework-dictionary-files)<br />
-[4] [Framework Dependencies](https://github.com/r00t-3xp10it/resource_files#framework-dependencies)<br />
-[5] [Framework Limitations](https://github.com/r00t-3xp10it/resource_files#framework-limitations)<br />
-[6] [Framework Download](https://github.com/r00t-3xp10it/resource_files#framework-download)<br />
-[7] [Framework help-update-install-execution](https://github.com/r00t-3xp10it/resource_files#framework-help-update-install-execution)<br />
-[8] [Project Referencies url's](https://github.com/r00t-3xp10it/resource_files#referencies)<br />
-[9] [Project Acknowledgment](https://github.com/r00t-3xp10it/resource_files#project-acknowledgment)<br />
-[10] [Project releases description](https://github.com/r00t-3xp10it/resource_files/releases)<br />
+[1] [Project History](https://github.com/ryanmrestivo/metasploit-resource-files#project-history)<br />
+[2] [Framework Description](https://github.com/ryanmrestivo/metasploit-resource-files#framework-description)<br />
+[3] [Framework Dictionary files](https://github.com/ryanmrestivo/metasploit-resource-files#framework-dictionary-files)<br />
+[4] [Framework Dependencies](https://github.com/ryanmrestivo/metasploit-resource-files#framework-dependencies)<br />
+[5] [Framework Limitations](https://github.com/ryanmrestivo/metasploit-resource-files#framework-limitations)<br />
+[6] [Framework Download](https://github.com/ryanmrestivo/metasploit-resource-files#framework-download)<br />
+[7] [Framework help-update-install-execution](https://github.com/ryanmrestivo/metasploit-resource-files#framework-help-update-install-execution)<br />
+[8] [Project Referencies url's](https://github.com/ryanmrestivo/metasploit-resource-files#referencies)<br />
+[9] [Project Acknowledgment](https://github.com/ryanmrestivo/metasploit-resource-files#project-acknowledgment)<br />
+[10] [Project releases description](https://github.com/ryanmrestivo/metasploit-resource-files/releases)<br />
 
 ---
 <br />
 
 ### Project History
-Mosquito.sh (**BASH**) script was written for the purpose of automating the resource files (**ERB**) contained in this [repository](https://github.com/r00t-3xp10it/resource_files). Each resource file is written to allow users to run them in three different ways, from scan the Local Lan, scan user inputs (**RHOSTS/LHOSTS**) or randomly scan the **WAN** network for possible targets to add to metasploit database.
+Mosquito.sh (**BASH**) script was written for the purpose of automating the resource files (**ERB**) contained in this [repository](https://github.com/ryanmrestivo/metasploit-resource-files). Each resource file is written to allow users to run them in three different ways, from scan the Local Lan, scan user inputs (**RHOSTS/LHOSTS**) or randomly scan the **WAN** network for possible targets to add to metasploit database.
 
 ![mosquito_banner](https://i.imgur.com/Ibrvsjk.png)
 
@@ -76,7 +76,7 @@ And each valid credentials found (brute-force) will spawn a shell session to rem
 ![mosquito_banner](https://i.imgur.com/630IHhF.png)
 
 
-[jump to top](https://github.com/r00t-3xp10it/resource_files#index)
+[jump to top](https://github.com/ryanmrestivo/metasploit-resource-files#index)
 
 ---
 <br />
@@ -89,7 +89,7 @@ All dictionary files can be found in project working directory under: 'resource_
 
 ![mosquito_banner](http://u.cubeupload.com/pedroubuntu10/dic.png)
 
-[jump to top](https://github.com/r00t-3xp10it/resource_files#index)
+[jump to top](https://github.com/ryanmrestivo/metasploit-resource-files/#index)
 
 ---
 <br />
@@ -114,7 +114,7 @@ All dictionary files can be found in project working directory under: 'resource_
 Adicionaly to the dependencies described above, diferent resource scripts requires diferent msf auxiliarys
 or nmap nse adicional scripts installed, the -i switch in mosquito allow us to download/install all that extra modules fast and easy.
 
-[jump to top](https://github.com/r00t-3xp10it/resource_files#index)
+[jump to top](https://github.com/ryanmrestivo/metasploit-resource-files/#index)
 
 ---
 <br />
@@ -128,7 +128,7 @@ or nmap nse adicional scripts installed, the -i switch in mosquito allow us to d
 
 **Hint:** This resource scripts requires that the msf database to be empty of hosts and services data. Thats the main reason why this scripts creates a new workspace named **'mosquito'** and stores all data inside that workspace while working, then the resource script deletes the **'mosquito'** workspace in the end of execution and leave *default database intact.
 
-[jump to top](https://github.com/r00t-3xp10it/resource_files#index)
+[jump to top](https://github.com/ryanmrestivo/metasploit-resource-files/#index)
 
 ---
 <br />
@@ -148,29 +148,26 @@ or nmap nse adicional scripts installed, the -i switch in mosquito allow us to d
 ![mosquito_banner](http://u.cubeupload.com/pedroubuntu10/mosquitoupdate.png)
 
 
-[jump to top](https://github.com/r00t-3xp10it/resource_files#index)
+[jump to top](https://github.com/ryanmrestivo/metasploit-resource-files/#index)
 
 ---
 <br />
 
 ### Referencies
-[1] [Project home page](https://github.com/r00t-3xp10it/resource_files)<br />
-[2] [Project wiki - dependencies](https://github.com/r00t-3xp10it/resource_files/wiki/Offensive-Resource_Files-%7C-Dependencies)<br />
-[3] [offensive resource script - geo_location.rc](https://github.com/r00t-3xp10it/resource_files/wiki/Offensive-Resource_Files--%7C-Geo_Location)<br />
-[4] [offensive resource script - post_exploitation.rc](https://github.com/r00t-3xp10it/resource_files/wiki/post_exploitation.rc-%7C-offensive-resource-script)<br />
-[5] [hacking-material-books - metasploit_resource_files](https://github.com/r00t-3xp10it/hacking-material-books/blob/master/metasploit-RC%5BERB%5D/metasploit_resource_files.md#metasploit-resource-files)<br />
+[1] [Project home page](https://github.com/ryanmrestivo/metasploit-resource-files/)<br />
+[2] [Project wiki - dependencies](https://github.com/ryanmrestivo/metasploit-resource-files//wiki/Offensive-Resource_Files-%7C-Dependencies)<br />
+[3] [offensive resource script - geo_location.rc](https://github.com/ryanmrestivo/metasploit-resource-files//wiki/Offensive-Resource_Files--%7C-Geo_Location)<br />
+[4] [offensive resource script - post_exploitation.rc](https://github.com/ryanmrestivo/metasploit-resource-files//wiki/post_exploitation.rc-%7C-offensive-resource-script)<br />
+
 
 <br />
 
 ### Project Acknowledgment
+@root-exploit - initial creation <br />
 @fyodor - nmap framework<br />
 @Hhdm - metasploit framework<br />
 @gmedian - vulners.nse script<br />
 @SeanWarnock - http-winrm.nse script<br />
 @MathiasGut - freevulnsearch.nse script<br />
 
-[jump to top](https://github.com/r00t-3xp10it/resource_files#index)
-
-<br />
-
-## Suspicious Shell Activity redteam@2019
+[jump to top](https://github.com/ryanmrestivo/metasploit-resource-files/#index)
