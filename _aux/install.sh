@@ -45,7 +45,7 @@ while getopts ":h,:u," opt; do
         msf_local=$(cat version | grep "=" | cut -d '.' -f3)
         main_local=$(cat version | grep "=" | cut -d '.' -f1 | cut -d '=' -f2)
         mv version backup > /dev/nul 2>&1
-        wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/bin/version > /dev/nul 2>&1
+        wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/bin/version > /dev/nul 2>&1
         remote=$(cat version | grep "=" | cut -d '=' -f2)
         core_remote=$(cat version | grep "=" | cut -d '.' -f2)
         msf_remote=$(cat version | grep "=" | cut -d '.' -f3)
@@ -85,7 +85,7 @@ while getopts ":h,:u," opt; do
                     ## Updating MSF modules
                     rm -f enum_protections.rb > /dev/nul 2>&1
                     echo "${BlueF}[*]${white} Downloading enum_protections.rb"${Reset};
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/enum_protections.rb > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/enum_protections.rb > /dev/nul 2>&1
                     echo "${BlueF}[*]${white} Locate metasploit absoluct path"${Reset};
                     aV_path=$(locate modules/post/windows/recon | grep -v '\doc' | grep -v '\documentation' | head -n 1) > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Copy Module to metasploit database"${Reset};
@@ -96,7 +96,7 @@ while getopts ":h,:u," opt; do
 
                     rm -f SCRNSAVE_T1180_persistence.rb > /dev/nul 2>&1
                     echo "${BlueF}[*]${white} Downloading SCRNSAVE_T1180_persistence.rb"${Reset};
-                  wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/SCRNSAVE_T1180_persistence.rb > /dev/nul 2>&1
+                  wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/SCRNSAVE_T1180_persistence.rb > /dev/nul 2>&1
                     echo "${BlueF}[*]${white} Locate metasploit absoluct path"${Reset};
                   t1180_path=$(locate modules/post/windows/escalate | grep -v '\doc' | grep -v '\documentation' | head -n 1) > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Copy Module to metasploit database"${Reset};
@@ -107,7 +107,7 @@ while getopts ":h,:u," opt; do
 
                     rm -f linux_hostrecon.rb > /dev/nul 2>&1
                     echo "${BlueF}[*]${white} Downloading linux_hostrecon.rb"${Reset};
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/linux_hostrecon.rb > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/linux_hostrecon.rb > /dev/nul 2>&1
                     echo "${BlueF}[*]${white} Locate metasploit absoluct path"${Reset};
                     Linux_path=$(locate modules/post/linux/gather | grep -v '\doc' | grep -v '\documentation' | head -n 1) > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Copy Module to metasploit database"${Reset};
@@ -118,7 +118,7 @@ while getopts ":h,:u," opt; do
 
                     rm -f cve_2019_0708_bluekeep_dos.rb > /dev/nul 2>&1
                     echo "${BlueF}[*]${white} Downloading cve_2019_0708_bluekeep_dos.rb"${Reset};
-                 wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/cve_2019_0708_bluekeep_dos.rb > /dev/nul 2>&1
+                 wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/cve_2019_0708_bluekeep_dos.rb > /dev/nul 2>&1
                     echo "${BlueF}[*]${white} Locate metasploit absoluct path"${Reset};
                Linux_path=$(locate modules/auxiliary/dos/windows/rdp | grep -v '\doc' | grep -v '\documentation' | head -n 1) > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Copy Module to metasploit database"${Reset};
@@ -138,7 +138,7 @@ while getopts ":h,:u," opt; do
                     echo ${BlueF}[*]${white} "Downloading nmap nse script(s) from github"${Reset};
                     sleep 2
                     sudo rm -f http-winrm.nse > /dev/nul 2>&1
-                    sudo wget -qq https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/http-winrm.nse
+                    sudo wget -qq https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/http-winrm.nse
                     echo ${BlueF}[*]${white} "Copy module to: /usr/share/nmap/scripts/http-winrm.nse"${Reset};
                     sleep 2
                     sudo cp $IPATH/http-winrm.nse /usr/share/nmap/scripts/http-winrm.nse
@@ -146,7 +146,7 @@ while getopts ":h,:u," opt; do
                     echo ${BlueF}[*]${white} "Downloading nmap nse script(s) from github"${Reset};
                     sleep 2
                     sudo rm -f AXISwebcam-recon.nse > /dev/nul 2>&1
-                    sudo wget -qq https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/AXISwebcam-recon.nse
+                    sudo wget -qq https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/AXISwebcam-recon.nse
                     echo ${BlueF}[*]${white} "Copy module to: /usr/share/nmap/scripts/AXISwebcam-recon.nse"${Reset};
                     sleep 2
                     sudo cp $IPATH/AXISwebcam-recon.nse /usr/share/nmap/scripts/AXISwebcam-recon.nse
@@ -162,7 +162,7 @@ while getopts ":h,:u," opt; do
                     echo ${BlueF}[*]${white} "Downloading nmap nse script from github"${Reset};
                     sleep 2
                     sudo rm -f vulners.nse > /dev/nul 2>&1
-                    sudo wget -qq https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/vulners.nse
+                    sudo wget -qq https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/vulners.nse
                     echo ${BlueF}[*]${white} "Copy module to: /usr/share/nmap/scripts/vulners.nse"${Reset};
                     sleep 2
                     sudo cp $IPATH/vulners.nse /usr/share/nmap/scripts/vulners.nse
@@ -204,55 +204,55 @@ while getopts ":h,:u," opt; do
                     ## Updating RC scripts
                     echo "${YellowF}[i]${white} Updating handler.rc"${Reset};
                     rm -f handler.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/handler.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/handler.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating http_CVE.rc"${Reset};
                     rm -f http_CVE.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/http_CVE.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/http_CVE.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating manage_db.rc"${Reset};
                     rm -f manage_db.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/manage_db.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/manage_db.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating brute_force.rc"${Reset};
                     rm -f brute_force.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/brute_force.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/brute_force.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating mssql_brute.rc"${Reset};
                     rm -f mssql_brute.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/mssql_brute.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/mssql_brute.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating mysql_brute.rc"${Reset};
                     rm -f mysql_brute.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/mysql_brute.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/mysql_brute.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating geo_location.rc"${Reset};
                     rm -f geo_location.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/geo_location.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/geo_location.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating snmp_exploiter.rc"${Reset};
                     rm -f snmp_exploiter.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/snmp_exploiter.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/snmp_exploiter.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating post_exploitation.rc"${Reset};
                     rm -f post_exploitation.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/post_exploitation.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/post_exploitation.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating ms17_010.rc"${Reset};
                     rm -f ms17_010.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/ms17_010.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/ms17_010.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating winrm_brute.rc"${Reset};
                     rm -f winrm_brute.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/winrm_brute.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/winrm_brute.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating ssh_brute.rc"${Reset};
                     rm -f ssh_brute.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/ssh_brute.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/ssh_brute.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating telnet_brute.rc"${Reset};
                     rm -f telnet_brute.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/telnet_brute.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/telnet_brute.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating rtsp-url-brute.rc"${Reset};
                     rm -f rtsp-url-brute.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/rtsp-url-brute.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/rtsp-url-brute.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating postgres_brute.rc"${Reset};
                     rm -f postgres_brute.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/postgres_brute.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/postgres_brute.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating rpc_brute.rc"${Reset};
                     rm -f rpc_brute.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/rpc_brute.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/rpc_brute.rc > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating mass_exploiter.rc"${Reset};
                     rm -f mass_exploiter.rc > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/mass_exploiter.rc > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/mass_exploiter.rc > /dev/nul 2>&1
                     cd bin && rm -f backup > /dev/nul 2>&1
                     cd .. && cd aux
                     echo "[*] -----------------------"
@@ -286,25 +286,25 @@ while getopts ":h,:u," opt; do
                     cd .. && cd bin
                     echo "${YellowF}[i]${white} Updating remote_hosts.txt"${Reset};
                     rm -f remote_hosts.txt > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/bin/remote_hosts.txt > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/bin/remote_hosts.txt > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating database_huge.xml"${Reset};
                     rm -f database_huge.xml > /dev/nul 2>&1
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/bin/database_huge.xml > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/bin/database_huge.xml > /dev/nul 2>&1
                     cd wordlists
                     echo "${YellowF}[i]${white} Updating multi_services_wordlist.txt"${Reset};
                     rm -f multi_services_wordlist.txt > /dev/nul 2>&1
-     wget -qq https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/bin/wordlists/multi_services_wordlist.txt > /dev/nul 2>&1
+     wget -qq https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/bin/wordlists/multi_services_wordlist.txt > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating ssh-default-userpasslist.txt"${Reset};
                     rm -f ssh-default-userpasslist.txt > /dev/nul 2>&1
-     wget -qq https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/bin/wordlists/ssh-default-userpasslist.txt > /dev/nul 2>&1
+     wget -qq https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/bin/wordlists/ssh-default-userpasslist.txt > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating telnet-default-userpasslist.txt"${Reset};
                     rm -f telnet-default-userpasslist.txt > /dev/nul 2>&1
-  wget -qq https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/bin/wordlists/telnet-default-userpasslist.txt > /dev/nul 2>&1
+  wget -qq https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/bin/wordlists/telnet-default-userpasslist.txt > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating ftp-default-userpasslist.txt"${Reset};
                     rm -f ftp-default-userpasslist.txt > /dev/nul 2>&1
-     wget -qq https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/bin/wordlists/ftp-default-userpasslist.txt > /dev/nul 2>&1
+     wget -qq https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/bin/wordlists/ftp-default-userpasslist.txt > /dev/nul 2>&1
                     rm -f b64-auth-cookies.txt > /dev/nul 2>&1
-     wget -qq https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/bin/wordlists/b64-auth-cookies.txt > /dev/nul 2>&1
+     wget -qq https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/bin/wordlists/b64-auth-cookies.txt > /dev/nul 2>&1
 
 
 
@@ -313,7 +313,7 @@ while getopts ":h,:u," opt; do
                     cd ..
                     rm -f mosquito.sh > /dev/nul 2>&1
                     echo "${YellowF}[i]${white} Updating mosquito.sh main script"${Reset};
-                    wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/mosquito.sh > /dev/nul 2>&1
+                    wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/mosquito.sh > /dev/nul 2>&1
                     chmod +x mosquito.sh
                     echo "[*] ------------------------------------"
                     echo "[i] Directory: /aux and /bin Updated."
@@ -340,15 +340,14 @@ while getopts ":h,:u," opt; do
 echo "---"
 echo ${BlueF}
 cat << !
-                                                🦟__________       
-              _______🦟________________________  ___(_) _  /______ 🦟
+                                                 __________       
+              _______ ________________________  ___(_) _  /______  
            __  __  __ \  __ \_  ___/  __  /  / / /_  /_  __/  __ \\
-         🦟_  / / / / / /_/ /(__  )/ /_/ // /_/ /_  / / /_ / /_/ /
+           _  / / / / / /_/ /(__  )/ /_/ // /_/ /_  / / /_ / /_/ /
            /_/ /_/ /_/\____//____/ \__, / \__,_/ /_/  \__/ \____/v:$ver
-                                     /_/ 🦟                             🦟
+                                     /_/                                
 
-       Author: r00t-3xp10it
-       Suspicious Shell Activity🦟redteam @2019🦟
+       Author: r00t-3xp10it, re-worked by ryanmrestivo
 !
 echo ""${Reset};
 cat << !
@@ -385,13 +384,13 @@ Colors;
 clear
 echo ${BlueF}
 cat << !
-                                    🦟            __________ 🦟
-              _______🦟________________________  ___(_) _  /______ 🦟
-       🦟  __  __  __ \  __ \_  ___/  __  /  / / /_  /_  __/  __ \\
+                                                 __________  
+              _______ ________________________  ___(_) _  /______  
+           __  __  __ \  __ \_  ___/  __  /  / / /_  /_  __/  __ \\
            _  / / / / / /_/ /(__  )/ /_/ // /_/ /_  / / /_ / /_/ /
-           /_/ /_/ /_/\____//____/ \__, / \__,_/ /_/  \__/ \____/ 🦟
-         🦟               🦟         /_/            🦟
-            🦟                          🦟
+           /_/ /_/ /_/\____//____/ \__, / \__,_/ /_/  \__/ \____/  
+                                   /_/             
+                                      
 
 !
 sleep 1
@@ -523,7 +522,7 @@ if [ "$op" = "y" ] || [ "$op" = "Y" ]; then
           sleep 1
           sudo rm -f enum_protections.rb
           echo "--------------------------------------------------" && echo ""
-          sudo wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/enum_protections.rb
+          sudo wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/enum_protections.rb
           echo "--------------------------------------------------"
           echo ${BlueF}[*]${white} "Copy module to: $aV_path/enum_protections.rb"${Reset};
           sleep 2
@@ -549,7 +548,7 @@ if [ "$op" = "y" ] || [ "$op" = "Y" ]; then
           sleep 2
           sudo rm -f SCRNSAVE_T1180_persistence.rb
           echo "--------------------------------------------------" && echo ""
-          sudo wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/SCRNSAVE_T1180_persistence.rb
+          sudo wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/SCRNSAVE_T1180_persistence.rb
           echo "--------------------------------------------------"
           echo ${BlueF}[*]${white} "Copy module to: $t1180_path/SCRNSAVE_T1180_persistence.rb"${Reset};
           sleep 2
@@ -575,7 +574,7 @@ if [ "$op" = "y" ] || [ "$op" = "Y" ]; then
           sleep 2
           sudo rm -f linux_hostrecon.rb
           echo "--------------------------------------------------" && echo ""
-          sudo wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/linux_hostrecon.rb
+          sudo wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/linux_hostrecon.rb
           echo "--------------------------------------------------"
           echo ${BlueF}[*]${white} "Copy module to: $Linux_path/linux_hostrecon.rb"${Reset};
           sleep 2
@@ -601,7 +600,7 @@ if [ "$op" = "y" ] || [ "$op" = "Y" ]; then
           sleep 2
           sudo rm -f cve_2019_0708_bluekeep_dos.rb
           echo "--------------------------------------------------" && echo ""
-          sudo wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/cve_2019_0708_bluekeep_dos.rb
+          sudo wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/cve_2019_0708_bluekeep_dos.rb
           echo "--------------------------------------------------"
           echo ${BlueF}[*]${white} "Copy module to: $Linux_path/cve_2019_0708_bluekeep_dos.rb"${Reset};
           sleep 2
@@ -667,7 +666,7 @@ if [ "$op" = "y" ] || [ "$op" = "Y" ]; then
        sleep 2
        sudo rm -f AXISwebcam-recon.nse
        echo "------------------------------------------"
-       sudo wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/AXISwebcam-recon.nse
+       sudo wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/AXISwebcam-recon.nse
        echo "------------------------------------------"
        echo ${BlueF}[*]${white} "Copy module to: /usr/share/nmap/scripts/AXISwebcam-recon.nse"${Reset};
        sleep 2
@@ -694,7 +693,7 @@ if [ "$op" = "y" ] || [ "$op" = "Y" ]; then
        sleep 2
        sudo rm -f http-winrm.nse
        echo "------------------------------------------"
-       sudo wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/http-winrm.nse
+       sudo wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/http-winrm.nse
        echo "------------------------------------------"
        echo ${BlueF}[*]${white} "Copy module to: /usr/share/nmap/scripts/http-winrm.nse"${Reset};
        sleep 2
@@ -721,7 +720,7 @@ if [ "$op" = "y" ] || [ "$op" = "Y" ]; then
        sleep 2
        sudo rm -f vulners.nse
        echo "------------------------------------------"
-       sudo wget https://raw.githubusercontent.com/r00t-3xp10it/resource_files/master/aux/vulners.nse
+       sudo wget https://raw.githubusercontent.com/ryanmrestivo/metasploit-resource-files/master/aux/vulners.nse
        echo "------------------------------------------"
        echo ${BlueF}[*]${white} "Copy module to: /usr/share/nmap/scripts/vulners.nse"${Reset};
        sleep 2

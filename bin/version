@@ -17,5 +17,5 @@ version=7.18.5
 #   -----
 #   To update the ALL project edit [version] file and change version number
 #   to: 0.00.0 save the file and run sudo ./mosquito.sh -u (update option).
-#   OR CLONE REPOSITORY: git clone https://github.com/r00t-3xp10it/resource_files.git
+#   OR CLONE REPOSITORY: git clone https://github.com/ryanmrestiv/metasploit-resource-files.git
 ##
