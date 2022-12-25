@@ -1030,9 +1030,9 @@ cat << !
     ║    N     -     Nmap nse quick scans                                       ║
     ╚───────────────────────────────────────────────────────────────────────────╣
 !
-echo "                                                           ${BlueF}SSA${YellowF}©${RedF}RedTeam${YellowF}@${BlueF}2019${white}─╝"${Reset};
+${Reset};
 echo ""
-echo "${BlueF}[☠]${white} mosquito framework"${Reset}
+echo "${BlueF}[!]${white} mosquito framework"${Reset}
 sleep 1
 echo -n "${BlueF}[${GreenF}➽${BlueF}]${white} Chose Option number${RedF}:${white}"${Reset};
 read choice
